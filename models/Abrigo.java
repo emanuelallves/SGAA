@@ -3,7 +3,9 @@ package models;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Abrigo {
+import interfaces.RegistrarVagas;
+
+public abstract class Abrigo implements RegistrarVagas{
     private String nome;
     private Endereco endereco;
     private int capacidade;
@@ -40,6 +42,37 @@ public abstract class Abrigo {
     public List<Vaga> getVagas() {
         return vagas;
     }
+
+    @Override
+    public boolean adicionarVaga(Vaga vaga) {
+        if(vagas.size() < capacidade && !vaga.isOcupada()) {
+            vagas.add(vaga);
+            System.out.println("Vaga adicionada com sucesso");
+            return true;
+        }
+
+        System.out.println("Capacidade máxima atingida ou vaga ocupada");
+        return false;
+
+    }
+
+    @Override
+    public void encerrarAcolhimento(PessoaAcolhida pessoa) {
+        boolean b = true;
+        for(Vaga v : getVagas()) {
+            if(v.getPessoa() != null && v.getPessoa().getNome().equals(pessoa.getNome())) {
+                v.liberar();
+                System.out.println("Vaga liberada com sucesso!");
+                b = false;
+                break;
+            }
+        }
+
+        if(b) {
+            System.out.println("Nenhuma vaga está sendo ocupada por esta pessoa!");
+        }
+    }
+
 
     public abstract String getTipo();
     

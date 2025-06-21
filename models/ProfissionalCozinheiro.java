@@ -3,11 +3,11 @@ package models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cozinheiro extends Profissional{
+public class ProfissionalCozinheiro extends Profissional{
     private List<String> pratos;
     private boolean responsavelPorCardapio;
 
-    public Cozinheiro(String nome, String CPF, Contato contato, String horarioEntrada, String horarioSaida) {
+    public ProfissionalCozinheiro(String nome, String CPF, Contato contato, String horarioEntrada, String horarioSaida) {
         super(nome, CPF, contato, horarioEntrada, horarioSaida);
         this.pratos = new ArrayList<>();
         this.responsavelPorCardapio = false;

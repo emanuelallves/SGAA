@@ -4,12 +4,12 @@ import java.util.List;
 
 import interfaces.PessoasAtendidas;
 
-public class Enfermeiro extends Profissional implements PessoasAtendidas{
+public class ProfissionalEnfermeiro extends Profissional implements PessoasAtendidas{
     private String especialidade;
     private String COREN;
     private List<PessoaAcolhida> pessoasAtendidas;
 
-    public Enfermeiro(String nome, String CPF, Contato contato, String horarioEntrada, String horarioSaida,
+    public ProfissionalEnfermeiro(String nome, String CPF, Contato contato, String horarioEntrada, String horarioSaida,
             String especialidade, String COREN) {
         super(nome, CPF, contato, horarioEntrada, horarioSaida);
         this.especialidade = especialidade;

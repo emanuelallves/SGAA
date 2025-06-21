@@ -5,12 +5,12 @@ import java.util.List;
 
 import interfaces.PessoasAtendidas;
 
-public class AssistenteSocial extends Profissional implements PessoasAtendidas{
+public class ProfissionalAssistenteSocial extends Profissional implements PessoasAtendidas{
     private String areaAtuacao;
     private String crasResponsavel;
     private List<PessoaAcolhida> pessoasAtendidas;
     
-    public AssistenteSocial(String nome, String CPF, Contato contato, String horarioEntrada, String horarioSaida,
+    public ProfissionalAssistenteSocial(String nome, String CPF, Contato contato, String horarioEntrada, String horarioSaida,
             String areaAtuacao, String crasResponsavel) {
         super(nome, CPF, contato, horarioEntrada, horarioSaida);
         this.areaAtuacao = areaAtuacao;

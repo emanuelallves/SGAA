@@ -1,25 +1,23 @@
 package models;
 
-public class Atendimento {
+public abstract class Atendimento {
     private String data;
-    private String tipo;
     private String observacoes;
     private PessoaAcolhida pessoa;
     private Profissional profissional;
 
-    public Atendimento(String data, String tipo, String observacoes, PessoaAcolhida pessoa, Profissional profissional) {
+    public Atendimento(String data, String observacoes, PessoaAcolhida pessoa, Profissional profissional) {
         this.data = data;
-        this.tipo = tipo;
         this.observacoes = observacoes;
         this.pessoa = pessoa;
         this.profissional = profissional;
     }
 
-    public Atendimento(String data, String tipo, PessoaAcolhida pessoa, Profissional profissional) {
+    public Atendimento(String data, PessoaAcolhida pessoa, Profissional profissional) {
         this.data = data;
-        this.tipo = tipo;
         this.pessoa = pessoa;
         this.profissional = profissional;
+        this.observacoes = null;
     }
 
     public String getData() {
@@ -27,13 +25,6 @@ public class Atendimento {
     }
     public void setData(String data) {
         this.data = data;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
     }
 
     public String getObservacoes() {
@@ -57,5 +48,6 @@ public class Atendimento {
         this.profissional = profissional;
     }
 
+    public abstract String getTipo();
     
 }

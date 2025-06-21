@@ -2,13 +2,15 @@ package models;
 
 public class Doacao {
     private String descricao;
-    private String tipo;
+    private float quantia;
     private String dataRecebimento;
+    private Abrigo abrigo;
 
-    public Doacao(String descricao, String tipo, String dataRecebimento) {
+    public Doacao(String descricao, float quantia, String dataRecebimento, Abrigo abrigo) {
         this.descricao = descricao;
-        this.tipo = tipo;
+        setQuantia(quantia);
         this.dataRecebimento = dataRecebimento;
+        this.abrigo = abrigo;
     }
 
     public String getDescricao() {
@@ -18,11 +20,16 @@ public class Doacao {
         this.descricao = descricao;
     }
 
-    public String getTipo() {
-        return tipo;
+    public float getQuantia() {
+        return quantia;
     }
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setQuantia(float quantia) {
+        if(quantia > 0) {
+            this.quantia = quantia;
+            return;
+        }
+
+        System.out.println("Quantia inválida para doaçã!");
     }
 
     public String getDataRecebimento() {
@@ -32,5 +39,11 @@ public class Doacao {
         this.dataRecebimento = dataRecebimento;
     }
 
+    public Abrigo getAbrigo() {
+        return abrigo;
+    }
+    public void setAbrigo(Abrigo abrigo) {
+        this.abrigo = abrigo;
+    }
     
 }

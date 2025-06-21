@@ -31,6 +31,5 @@ public class Agendamento {
     public void setDataHora(String dataHora) {
         this.dataHora = dataHora;
     }
-
     
 }

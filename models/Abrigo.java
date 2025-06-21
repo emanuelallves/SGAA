@@ -3,7 +3,7 @@ package models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Abrigo {
+public abstract class Abrigo {
     private String nome;
     private Endereco endereco;
     private int capacidade;
@@ -40,5 +40,7 @@ public class Abrigo {
     public List<Vaga> getVagas() {
         return vagas;
     }
+
+    public abstract String getTipo();
     
 }

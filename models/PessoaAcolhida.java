@@ -1,29 +1,25 @@
 package models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PessoaAcolhida {
     private String nome;
     private int idade;
-    private String necessidades;
-    private String historico;
+    private List<String> necessidades;
+    private List<String> historico;
     private Contato contato;
     private String dataIngresso;
+    private boolean acolhido;
 
-    public PessoaAcolhida(String nome, int idade, String necessidades, String historico, Contato contato, 
-            String dataIngresso) {
+    public PessoaAcolhida(String nome, int idade, Contato contato, String dataIngresso) {
         this.nome = nome;
         setIdade(idade);
-        this.necessidades = necessidades;
-        this.historico = historico;
+        this.necessidades = new ArrayList<>();
+        this.historico = new ArrayList<>();
         this.contato = contato;
         this.dataIngresso = dataIngresso;
-    }
-
-    public PessoaAcolhida(String nome, int idade, String necessidades, Contato contato, String dataIngresso) {
-        this.nome = nome;
-        this.idade = idade;
-        this.necessidades = necessidades;
-        this.contato = contato;
-        this.dataIngresso = dataIngresso;
+        this.acolhido = true;
     }
 
     public String getNome() {
@@ -44,18 +40,18 @@ public class PessoaAcolhida {
         this.idade = idade;
     }
 
-    public String getNecessidades() {
+    public List<String> getNecessidades() {
         return necessidades;
     }
-    public void setNecessidades(String necessidades) {
-        this.necessidades = necessidades;
+    public void adicionarNecessidades(String necessidades) {
+        this.necessidades.add(necessidades);
     }
 
-    public String getHistorico() {
+    public List<String> getHistorico() {
         return historico;
     }
-    public void setHistorico(String historico) {
-        this.historico = historico;
+    public void adicionarAoHistorico(String historico) {
+        this.historico.add(historico);
     }
 
     public Contato getContato() {
@@ -70,6 +66,13 @@ public class PessoaAcolhida {
     }
     public void setDataIngresso(String dataIngresso) {
         this.dataIngresso = dataIngresso;
+    }
+
+    public boolean isAcolhido() {
+        return acolhido;
+    }
+    public void setAcolhido(boolean acolhido) {
+        this.acolhido = acolhido;
     }
 
     

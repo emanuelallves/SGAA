@@ -1,9 +1,9 @@
 package models;
 
-public class Temporario extends Abrigo {
+public class AbrigoTemporario extends Abrigo {
     private int prazoMaximoDias;
 
-    public Temporario(String nome, Endereco endereco, int capacidade, int prazoMaximoDias) {
+    public AbrigoTemporario(String nome, Endereco endereco, int capacidade, int prazoMaximoDias) {
         super(nome, endereco, capacidade);
         this.prazoMaximoDias = prazoMaximoDias;
     }

@@ -1,9 +1,9 @@
 package models;
 
-public class Permanente extends Abrigo {
+public class AbrigoPermanente extends Abrigo {
     private int tempoMinimoMeses;
 
-    public Permanente(String nome, Endereco endereco, int capacidade, int tempoMinimoMeses) {
+    public AbrigoPermanente(String nome, Endereco endereco, int capacidade, int tempoMinimoMeses) {
         super(nome, endereco, capacidade);
         this.tempoMinimoMeses = tempoMinimoMeses;
     }

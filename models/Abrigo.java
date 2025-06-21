@@ -73,7 +73,6 @@ public abstract class Abrigo implements RegistrarVagas{
         }
     }
 
-
     public abstract String getTipo();
     
 }

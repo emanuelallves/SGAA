@@ -15,9 +15,9 @@ public class RelatorioAbrigoService {
         sb.append("Capacidade: ").append(abrigo.getCapacidade()).append("\n");
         sb.append("Pessoas que estão acolhidas nesse abrigo: ").append("\n");
 
-        for(Vaga v : abrigo.getVagas()) {
-            if(v.getPessoa() != null) {
-                System.out.println("- " + v.getPessoa().getNome());
+        for (Vaga v : abrigo.getVagas()) {
+            if (v.getPessoa() != null) {
+                sb.append("- ").append(v.getPessoa().getNome()).append("\n");
             }
         }
 
